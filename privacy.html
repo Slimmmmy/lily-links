@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — Lily Draft Uploader</title>
+<meta name="description" content="Privacy policy for the Lily Draft Uploader tool.">
+<meta name="theme-color" content="#1A0F14">
+<style>
+  :root{
+    --ground:#1A0F14; --ground-2:#241419;
+    --line:rgba(255,238,230,.12);
+    --cream:#F7ECE6; --muted:#C4A9A4; --peach:#F0A57C;
+    --serif:"Didot","Bodoni MT","Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100svh; font-family:var(--sans); color:var(--cream);
+    background:
+      radial-gradient(120% 60% at 50% -10%, rgba(232,116,138,.20), transparent 62%),
+      linear-gradient(180deg,var(--ground) 0%, var(--ground-2) 100%);
+    background-attachment:fixed;
+    display:flex; justify-content:center;
+    padding:clamp(28px,6vh,64px) 20px calc(48px + env(safe-area-inset-bottom));
+    line-height:1.65;
+  }
+  main{width:100%; max-width:640px}
+  h1{font-family:var(--serif); font-size:clamp(30px,6vw,40px); font-weight:400; line-height:1.15; margin-bottom:8px}
+  .updated{font-size:12.5px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:34px}
+  h2{font-size:17px; font-weight:700; margin:30px 0 10px; letter-spacing:.01em}
+  p,li{font-size:15.5px; color:#E4CFC8}
+  p+p{margin-top:12px}
+  ul{margin:10px 0 0 20px; display:flex; flex-direction:column; gap:8px}
+  a{color:var(--peach)}
+  strong{color:var(--cream)}
+  footer{margin-top:44px; padding-top:20px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Privacy Policy</h1>
+  <div class="updated">Lily Draft Uploader · Updated 26 July 2026</div>
+
+  <p><strong>Lily Draft Uploader</strong> ("the tool") is a private, single-operator utility. It uploads finished
+  video files to the TikTok drafts of one account — <a href="https://www.tiktok.com/@_by_lily" target="_blank" rel="noopener">@_by_lily</a> —
+  which is owned and operated by the same person who runs the tool. It has no public users, no sign-up, and no
+  user-facing service.</p>
+
+  <h2>What the tool accesses</h2>
+  <p>With the account owner's explicit authorization through TikTok's standard consent screen, the tool requests
+  only two permissions:</p>
+  <ul>
+    <li><strong>user.info.basic</strong> — to confirm which account is connected (open ID, display name, username).</li>
+    <li><strong>video.upload</strong> — to place video files into that account's drafts. The tool cannot publish;
+    every post is reviewed and published manually from within the TikTok app.</li>
+  </ul>
+
+  <h2>What is stored, and where</h2>
+  <p>TikTok access and refresh tokens are stored in a single file on the operator's own computer. Nothing is
+  uploaded to a server, database, or cloud service belonging to the tool. There is no hosted backend.</p>
+  <p>The video files themselves are created by the operator and are sent directly to TikTok's upload endpoint.</p>
+
+  <h2>What is not done</h2>
+  <ul>
+    <li>No data is collected from any person other than the account owner.</li>
+    <li>No data is sold, rented, shared, or transferred to third parties.</li>
+    <li>No analytics, tracking pixels, advertising, or profiling.</li>
+    <li>No scraping of other TikTok users, their content, or their followers.</li>
+  </ul>
+
+  <h2>Retention and deletion</h2>
+  <p>Tokens are kept only while the tool is in use. Access can be withdrawn at any time from
+  <em>TikTok → Settings and privacy → Security and permissions → Manage app permissions</em>, which immediately
+  invalidates them. Deleting the local token file removes them from the computer.</p>
+
+  <h2>AI-generated content</h2>
+  <p>Lily is a fictional character and the content is AI-generated. Videos are labelled as AI-generated content
+  when published, in line with TikTok's synthetic media policy. No real, identifiable person is depicted.</p>
+
+  <h2>Changes</h2>
+  <p>If the tool's behaviour changes, this page is updated and the date above is revised.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:anmik2136@gmail.com">anmik2136@gmail.com</a></p>
+
+  <footer>
+    <a href="./">← Lily</a> · <a href="./terms.html">Terms of Service</a>
+  </footer>
+
+</main>
+</body>
+</html>
