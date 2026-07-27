@@ -110,7 +110,7 @@
     <div class="links">
 
       <div class="primary-wrap">
-        <a class="primary btn" href="https://www.fanvue.com/by_lily_/fv-3?utm_source=bio&utm_medium=link&utm_campaign=lily" target="_blank" rel="noopener">
+        <a class="primary btn" data-fanvue href="https://www.fanvue.com/by_lily_/fv-3?utm_source=bio&utm_medium=link&utm_campaign=lily" target="_blank" rel="noopener">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.7-9.5-9A5.3 5.3 0 0 1 12 6.5 5.3 5.3 0 0 1 21.5 12c-2 4.3-9.5 9-9.5 9z"/></svg>
           See more of me
           <span class="arrow">→</span>
@@ -138,5 +138,24 @@
     </footer>
 
   </main>
+
+  <script>
+    // Один и тот же файл обслуживает оба поддомена. Метку источника берём из хостнейма,
+    // чтобы в Fanvue было видно, откуда пришёл переход — из TikTok или из Instagram.
+    (function () {
+      var SOURCES = {
+        'lilys.msams.lol': 'tiktok',
+        'lily.msams.lol': 'instagram'
+      };
+      var source = SOURCES[location.hostname];
+      if (!source) return; // локально или на github.io оставляем utm_source=bio
+
+      var link = document.querySelector('a[data-fanvue]');
+      if (!link) return;
+      var url = new URL(link.href);
+      url.searchParams.set('utm_source', source);
+      link.href = url.toString();
+    })();
+  </script>
 </body>
 </html>
