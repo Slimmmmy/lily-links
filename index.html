@@ -140,21 +140,24 @@
   </main>
 
   <script>
-    // Один и тот же файл обслуживает оба поддомена. Метку источника берём из хостнейма,
-    // чтобы в Fanvue было видно, откуда пришёл переход — из TikTok или из Instagram.
+    // Один и тот же файл обслуживает оба поддомена. От хостнейма зависит, какая ссылка
+    // Fanvue подставится: fv-4 для TikTok, fv-3 для Instagram — Fanvue разделит источники
+    // у себя. UTM дублируют то же самое на случай, если смотреть аналитику снаружи.
     (function () {
-      var SOURCES = {
-        'lilys.msams.lol': 'tiktok',
-        'lily.msams.lol': 'instagram'
+      var VARIANTS = {
+        'lilys.msams.lol': { link: 'https://www.fanvue.com/by_lily_/fv-4', source: 'tiktok' },
+        'lily.msams.lol':  { link: 'https://www.fanvue.com/by_lily_/fv-3', source: 'instagram' }
       };
-      var source = SOURCES[location.hostname];
-      if (!source) return; // локально или на github.io оставляем utm_source=bio
+      var variant = VARIANTS[location.hostname];
+      if (!variant) return; // локально или на github.io оставляем то, что в разметке
 
-      var link = document.querySelector('a[data-fanvue]');
-      if (!link) return;
-      var url = new URL(link.href);
-      url.searchParams.set('utm_source', source);
-      link.href = url.toString();
+      var a = document.querySelector('a[data-fanvue]');
+      if (!a) return;
+      var url = new URL(variant.link);
+      url.searchParams.set('utm_source', variant.source);
+      url.searchParams.set('utm_medium', 'link');
+      url.searchParams.set('utm_campaign', 'lily');
+      a.href = url.toString();
     })();
   </script>
 </body>
